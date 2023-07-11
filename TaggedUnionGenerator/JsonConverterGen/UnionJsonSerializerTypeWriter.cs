@@ -18,7 +18,7 @@ namespace TaggedUnionGenerator.JsonConverterGen
         {
             var unionType = $"global::{def.UnionDefinition.Namespace}.{def.UnionDefinition.Name}";
 
-            using var _ = writer.StartBlock($"partial class {def.Name} : global::SourceGenerator.UnionJsonConverterBase<{unionType}, {unionType}.TypeEnum>");
+            using var _ = writer.StartBlock($"partial class {def.Name} : global::TaggedUnion.Json.UnionJsonConverterBase<{unionType}, {unionType}.TypeEnum>");
 
 
             WriteReadUnionCoreMethod(def.UnionDefinition, writer);

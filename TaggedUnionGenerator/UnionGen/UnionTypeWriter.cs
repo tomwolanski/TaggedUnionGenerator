@@ -17,7 +17,7 @@ namespace TaggedUnionGenerator.Writers
 
         private  static void WriteStructDefinition(UnionTypeDefinition def, IndentedTextWriter writer)
         {
-            using var _ = writer.StartBlock($"partial struct {def.Name} : global::SourceGenerator.IUnion<{def.Name}.TypeEnum>");
+            using var _ = writer.StartBlock($"partial struct {def.Name} : global::TaggedUnion.IUnion<{def.Name}.TypeEnum>");
 
             WriteOptionEnums(def, writer);
             writer.WriteLine();
@@ -194,17 +194,15 @@ namespace TaggedUnionGenerator.Writers
             var pascalOptionNames = def.Options.Select(n => n.Name).ToArray();
             var lastOption = pascalOptionNames.Last();
 
-            writer.WriteLine($"__Undefined,");
-
-            foreach (var option in pascalOptionNames)
+            foreach (var (option, idx) in pascalOptionNames.AsIndexed(1))
             {
                 if (option != lastOption)
                 {
-                    writer.WriteLine($"{option},");
+                    writer.WriteLine($"{option} = {idx},");
                 }
                 else
                 {
-                    writer.WriteLine($"{option}");
+                    writer.WriteLine($"{option} = {idx}");
                 }
             }
         }

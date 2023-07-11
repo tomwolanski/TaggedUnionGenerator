@@ -2,7 +2,7 @@
   "profiles": {
     "Profile 1": {
       "commandName": "DebugRoslynComponent",
-      "targetProject": "..\\SourceGenerator.Incremental.ConsoleApp\\SourceGenerator.Incremental.ConsoleApp.csproj"
+      "targetProject": "..\\TaggedUnionGenerator.ConsoleApp\\TaggedUnionGenerator.ConsoleApp.csproj"
     }
   }
 }

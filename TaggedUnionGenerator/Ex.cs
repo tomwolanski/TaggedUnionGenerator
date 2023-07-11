@@ -72,6 +72,12 @@ namespace TaggedUnionGenerator
                 values);
         }
 
+        public static IEnumerable<(T Item, int Index)> AsIndexed<T>(this IEnumerable<T> values, int startIndex = 0)
+        {
+            int index = startIndex;
+            return values.Select(n => (n, index++));
+        }
+
     }
 
 }

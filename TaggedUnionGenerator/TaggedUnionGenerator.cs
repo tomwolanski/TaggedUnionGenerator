@@ -16,7 +16,7 @@ using System.Text;
 namespace TaggedUnionGenerator
 {
     [Generator(LanguageNames.CSharp)]
-    public class UnionGenerator : IIncrementalGenerator
+    public class TaggedUnionGenerator : IIncrementalGenerator
     {
         public void Initialize(IncrementalGeneratorInitializationContext context)
         {
@@ -31,7 +31,7 @@ namespace TaggedUnionGenerator
             });
 
             var unionCandidates = context.SyntaxProvider
-                .ForAttributeWithMetadataName("SourceGenerator.UnionOptionAttribute`1",
+                .ForAttributeWithMetadataName("TaggedUnion.UnionOptionAttribute`1",
                 (node, _) => node is StructDeclarationSyntax sds && sds.Modifiers.Any(SyntaxKind.PartialKeyword),
                 (ctx, _) =>
                 {
@@ -44,7 +44,7 @@ namespace TaggedUnionGenerator
             //    .WithComparer(new UnionTypeDefinitionEqualityComparer());
 
             var unionJsonConvertersCandidates = context.SyntaxProvider
-                .ForAttributeWithMetadataName("SourceGenerator.UnionJsonConverterAttribute`1",
+                .ForAttributeWithMetadataName("TaggedUnion.Json.UnionJsonConverterAttribute`1",
                 (node, _) => node is ClassDeclarationSyntax sds && sds.Modifiers.Any(SyntaxKind.PartialKeyword),
                 (ctx, _) =>
                 {
@@ -99,11 +99,7 @@ namespace TaggedUnionGenerator
             {
                 if (def.UnionDefinition.Options.Length == 0)
                 {
-                    var diag = Diagnostic.Create(
-                        Diagnostics.ErrorTypeIsNotAnUnion,
-                        def.Location,
-                        def.UnionDefinition.Namespace,
-                        def.UnionDefinition.Name);
+                    var diag = Diagnostic.Create(Diagnostics.ErrorTypeIsNotAnUnion, def.Location, def.UnionDefinition.Namespace, def.UnionDefinition.Name);
 
                     ctx.ReportDiagnostic(diag);
                     return;
@@ -137,11 +133,11 @@ namespace TaggedUnionGenerator
         private static UnionTypeDefinition GetUnionDefinition(INamedTypeSymbol structSymbol, Location? location)
         {
             var options = structSymbol.GetAttributes()
-                .Where(a => a.AttributeClass.Name == "UnionOptionAttribute")
+                .Where(a => a.AttributeClass?.Name == "UnionOptionAttribute")
                 .Select(a =>
                 {
                     var loc = a.ApplicationSyntaxReference.GetSyntax().GetLocation();
-                    var type = a.AttributeClass.TypeArguments.Single().ToDisplayString(Consts.GlobalAlias);
+                    var type = a.AttributeClass!.TypeArguments.Single().ToDisplayString(Consts.GlobalAlias);
                     var name = (string)a.ConstructorArguments.Single().Value;
 
                     return new UnionTypeOptionDefinition(name, type, loc);

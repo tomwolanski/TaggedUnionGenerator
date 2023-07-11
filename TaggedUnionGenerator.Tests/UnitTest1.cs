@@ -4,9 +4,9 @@ using System.Reflection;
 
 namespace TaggedUnionGenerator.Tests
 {
-    public class SourceGeneratorTests
+    public class TaggedUnionGeneratorTests
     {
-        private readonly string Version = typeof(UnionGenerator).Assembly.GetName().Version.ToString();
+        private readonly string Version = typeof(TaggedUnionGenerator).Assembly.GetName().Version.ToString();
 
         [Fact]
         public void ShouldGenerateCommonAttributes()
@@ -65,7 +65,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.Empty(runResult.Diagnostics);
             Assert.True(runResult.ContainsExpectedCode(expectedUnionOptionAttributeCode));
@@ -109,7 +109,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.Empty(runResult.Diagnostics);
             Assert.True(runResult.ContainsExpectedCode(expectedUntypedUnionCode));
@@ -234,7 +234,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.Empty(runResult.Diagnostics);
             Assert.True(runResult.ContainsExpectedCode(expectedAttributeCode));
@@ -358,7 +358,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.Empty(runResult.Diagnostics);
             Assert.True(runResult.ContainsExpectedCode(expectedCode));
@@ -540,7 +540,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.Empty(runResult.Diagnostics);
             Assert.True(runResult.ContainsExpectedCode(expectedCode));
@@ -563,7 +563,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.NotEmpty(runResult.Diagnostics);
             Assert.Collection(runResult.Diagnostics,
@@ -585,7 +585,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.NotEmpty(runResult.Diagnostics);
             Assert.Collection(runResult.Diagnostics,
@@ -606,7 +606,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.Collection(runResult.Diagnostics,
                 n => n.AssertDiagnosticEquals(DiagnosticSeverity.Error, "UG0002", "Failed to generate union based on type Ns.IntOrBool. Union option name cannot me empty."));
@@ -625,7 +625,7 @@ namespace TaggedUnionGenerator.Tests
                 }
                 """;
 
-            var runResult = GenTestHelpers.RunGenerator<UnionGenerator>(code);
+            var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.Collection(runResult.Diagnostics,
                 n => n.AssertDiagnosticEquals(DiagnosticSeverity.Warning, "UG0005", "Union based on type Ns.IntOrBool has a single option and serves no purpose."));
