@@ -4,7 +4,20 @@ using System.Text.Json;
 using TaggedUnion;
 using TaggedUnion.Json;
 
-namespace Foo.Test;
+namespace NS;
+
+
+// define a union with 2 options. 
+[UnionOption<int>("IntegerVal")]
+[UnionOption<bool>("BooleanVal")]
+public partial struct IntOrBool
+{ }
+
+
+// optionally, define a System.Text.Json converter class
+[UnionJsonConverterAttribute<IntOrBool>]
+public partial class IntOrBoolJsonSerializer
+{ }
 
 
 public static class Program
@@ -59,14 +72,4 @@ public static class Program
     }
 }
 
-
-[UnionOption<int>("IntegerVal")]
-[UnionOption<bool>("BooleanVal")]
-public partial struct IntOrBool
-{ }
-
-
-[UnionJsonConverterAttribute<IntOrBool>]
-public partial class IntOrBoolJsonSerializer
-{ }
 
