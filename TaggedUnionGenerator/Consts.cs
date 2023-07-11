@@ -19,7 +19,7 @@ namespace TaggedUnionGenerator
 
                    namespace TaggedUnion
                    {
-                       [{{Consts.GeneratedCodeAttr}}]
+                       [{{GeneratedCodeAttr}}]
                        [global::System.AttributeUsage(global::System.AttributeTargets.Struct, AllowMultiple = true)]
                        public sealed class UnionOptionAttribute<TUnionOption> : global::System.Attribute
                        {
@@ -40,7 +40,7 @@ namespace TaggedUnionGenerator
 
                    namespace TaggedUnion.Json
                    {
-                       [{{Consts.GeneratedCodeAttr}}]
+                       [{{GeneratedCodeAttr}}]
                        [global::System.AttributeUsage(global::System.AttributeTargets.Class, AllowMultiple = false)]
                        public sealed class UnionJsonConverterAttribute<TUnion> : global::System.Attribute
                        { }
@@ -53,7 +53,7 @@ namespace TaggedUnionGenerator
 
                     namespace TaggedUnion
                     {
-                        [{{Consts.GeneratedCodeAttr}}]
+                        [{{GeneratedCodeAttr}}]
                         public interface IUnion
                         { }
                     }
@@ -65,7 +65,7 @@ namespace TaggedUnionGenerator
 
                     namespace TaggedUnion
                     {
-                        [{{Consts.GeneratedCodeAttr}}]
+                        [{{GeneratedCodeAttr}}]
                         public interface IUnion<TTypeEnum> 
                             where TTypeEnum: struct, Enum
                         {
@@ -80,8 +80,8 @@ namespace TaggedUnionGenerator
 
                     namespace TaggedUnion.Json
                     {
-                        [{{Consts.GeneratedCodeAttr}}]
-                        abstract class UnionJsonConverterBase<TUnion, TUnionTypeEnum> : global::System.Text.Json.Serialization.JsonConverter<TUnion>
+                        [{{GeneratedCodeAttr}}]
+                        public abstract class UnionJsonConverterBase<TUnion, TUnionTypeEnum> : global::System.Text.Json.Serialization.JsonConverter<TUnion>
                             where TUnionTypeEnum : struct, global::System.Enum
                             where TUnion : global::TaggedUnion.IUnion<TUnionTypeEnum>
                         {
