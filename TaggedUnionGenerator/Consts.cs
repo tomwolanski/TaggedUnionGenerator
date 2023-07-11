@@ -1,7 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
 using System.Reflection;
 
-namespace SourceGenerator.Incremental.Gen
+namespace TaggedUnionGenerator
 {
     public static class Consts
     {

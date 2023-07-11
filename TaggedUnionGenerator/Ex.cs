@@ -5,7 +5,7 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 
-namespace SourceGenerator.Incremental.Gen
+namespace TaggedUnionGenerator
 {
     internal static class Ex
     {

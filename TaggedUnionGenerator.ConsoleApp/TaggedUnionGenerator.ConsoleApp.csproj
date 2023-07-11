@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SourceGenerator.Incremental.Gen\SourceGenerator.Incremental.Gen.csproj"
+    <ProjectReference Include="..\TaggedUnionGenerator\TaggedUnionGenerator.csproj"
                       OutputItemType="Analyzer"
                       ReferenceOutputAssembly="false" >
       <PrivateAssets>all</PrivateAssets>

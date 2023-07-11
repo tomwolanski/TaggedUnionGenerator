@@ -1,8 +1,8 @@
 ﻿using System.CodeDom.Compiler;
 using System.Linq;
-using SourceGenerator.Incremental.Gen.UnionGen;
+using TaggedUnionGenerator.UnionGen;
 
-namespace SourceGenerator.Incremental.Gen.JsonConverterGen
+namespace TaggedUnionGenerator.JsonConverterGen
 {
     internal static class UnionJsonSerializerTypeWriter
     {

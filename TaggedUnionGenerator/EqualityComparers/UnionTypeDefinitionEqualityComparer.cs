@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using SourceGenerator.Incremental.Gen.UnionGen;
+using TaggedUnionGenerator.UnionGen;
 
-namespace SourceGenerator.Incremental.Gen.EqualityComparers
+namespace TaggedUnionGenerator.EqualityComparers
 {
     internal class UnionTypeDefinitionEqualityComparer : IEqualityComparer<UnionTypeDefinition>
     {

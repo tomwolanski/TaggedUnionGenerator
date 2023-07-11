@@ -1,7 +1,7 @@
 ﻿using Microsoft.CodeAnalysis;
-using SourceGenerator.Incremental.Gen.UnionGen;
+using TaggedUnionGenerator.UnionGen;
 
-namespace SourceGenerator.Incremental.Gen.JsonConverterGen
+namespace TaggedUnionGenerator.JsonConverterGen
 {
     record UnionTypeJsonConverterDefinition(string? Namespace, string Name, UnionTypeDefinition UnionDefinition, Location? Location);
 

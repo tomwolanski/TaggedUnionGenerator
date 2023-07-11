@@ -1,9 +1,9 @@
 ﻿using Microsoft.CodeAnalysis;
-using SourceGenerator.Incremental.Gen.UnionGen;
+using TaggedUnionGenerator.UnionGen;
 using System.CodeDom.Compiler;
 using System.Linq;
 
-namespace SourceGenerator.Incremental.Gen.Writers
+namespace TaggedUnionGenerator.Writers
 {
     internal static class UnionTypeWriter
     {

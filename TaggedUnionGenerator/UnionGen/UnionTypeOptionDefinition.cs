@@ -1,6 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 
-namespace SourceGenerator.Incremental.Gen.UnionGen
+namespace TaggedUnionGenerator.UnionGen
 {
     public record UnionTypeOptionDefinition(string Name, string Type, Location Location);
 

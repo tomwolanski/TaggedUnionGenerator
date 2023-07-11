@@ -2,10 +2,12 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
 using System.Reflection;
 
-namespace SourceGenerator.Incremental.Gen.Tests
+namespace TaggedUnionGenerator.Tests
 {
     public class SourceGeneratorTests
     {
+        private readonly string Version = typeof(UnionGenerator).Assembly.GetName().Version.ToString();
+
         [Fact]
         public void ShouldGenerateCommonAttributes()
         {
@@ -21,7 +23,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
 
                 namespace SourceGenerator
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     [global::System.AttributeUsage(global::System.AttributeTargets.Struct, AllowMultiple = true)]
                     public sealed class UnionOptionAttribute<TUnionOption> : global::System.Attribute
                     {
@@ -42,7 +44,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
 
                 namespace SourceGenerator
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     public interface IUnion
                     { }
                 }
@@ -54,7 +56,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
 
                 namespace SourceGenerator
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     public interface IUnion<TTypeEnum> 
                         where TTypeEnum: struct, Enum
                     {
@@ -86,7 +88,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
 
                 namespace SourceGenerator
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     public interface IUnion
                     { }
                 }
@@ -98,7 +100,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
 
                 namespace SourceGenerator
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     public interface IUnion<TTypeEnum> 
                         where TTypeEnum: struct, Enum
                     {
@@ -129,7 +131,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
 
                 namespace SourceGenerator
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     [global::System.AttributeUsage(global::System.AttributeTargets.Class, AllowMultiple = false)]
                     public sealed class UnionJsonConverterAttribute<TUnion> : global::System.Attribute
                     { }
@@ -142,7 +144,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
 
                 namespace SourceGenerator
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     abstract class UnionJsonConverterBase<TUnion, TUnionTypeEnum> : global::System.Text.Json.Serialization.JsonConverter<TUnion>
                         where TUnionTypeEnum : struct, global::System.Enum
                         where TUnion : global::SourceGenerator.IUnion<TUnionTypeEnum>
@@ -258,7 +260,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
                 #nullable enable
                 namespace Ns
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     partial struct IntOrBool : global::SourceGenerator.IUnion<IntOrBool.TypeEnum>
                     {
                         public enum TypeEnum
@@ -386,7 +388,7 @@ namespace SourceGenerator.Incremental.Gen.Tests
                 #nullable enable
                 namespace Ns
                 {
-                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("SourceGenerator.Incremental.Gen", "1.0.0.0")]
+                    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("TaggedUnionGenerator", "1.0.0.0")]
                     partial struct IntOrBool : global::SourceGenerator.IUnion<IntOrBool.TypeEnum>
                     {
                         public enum TypeEnum

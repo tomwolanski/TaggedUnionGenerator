@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceGenerator.Incremental.ConsoleApp", "SourceGenerator.Incremental.ConsoleApp\SourceGenerator.Incremental.ConsoleApp.csproj", "{AED42CB8-1DEC-4B5E-ACE1-D433BDE2D715}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaggedUnionGenerator.ConsoleApp", "TaggedUnionGenerator.ConsoleApp\TaggedUnionGenerator.ConsoleApp.csproj", "{AED42CB8-1DEC-4B5E-ACE1-D433BDE2D715}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceGenerator.Incremental.Gen", "SourceGenerator.Incremental.Gen\SourceGenerator.Incremental.Gen.csproj", "{3DAE3698-E84B-4C0D-AD44-1C9DE969B261}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaggedUnionGenerator", "TaggedUnionGenerator\TaggedUnionGenerator.csproj", "{3DAE3698-E84B-4C0D-AD44-1C9DE969B261}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceGenerator.Incremental.Gen.Tests", "SourceGenerator.Incremental.Gen.Tests\SourceGenerator.Incremental.Gen.Tests.csproj", "{39952B70-8468-40B0-9D1F-9563D71A5186}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaggedUnionGenerator.Tests", "TaggedUnionGenerator.Tests\TaggedUnionGenerator.Tests.csproj", "{39952B70-8468-40B0-9D1F-9563D71A5186}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,9 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using SourceGenerator.Incremental.Gen.JsonConverterGen;
-using SourceGenerator.Incremental.Gen.UnionGen;
-using SourceGenerator.Incremental.Gen.Writers;
+using TaggedUnionGenerator.JsonConverterGen;
+using TaggedUnionGenerator.UnionGen;
+using TaggedUnionGenerator.Writers;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace SourceGenerator.Incremental.Gen
+namespace TaggedUnionGenerator
 {
     [Generator(LanguageNames.CSharp)]
     public class UnionGenerator : IIncrementalGenerator

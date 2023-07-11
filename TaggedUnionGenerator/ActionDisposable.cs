@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SourceGenerator.Incremental.Gen
+namespace TaggedUnionGenerator
 {
     internal sealed class ActionDisposable : IDisposable
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 
-namespace SourceGenerator.Incremental.Gen
+namespace TaggedUnionGenerator
 {
     static class Diagnostics
     {

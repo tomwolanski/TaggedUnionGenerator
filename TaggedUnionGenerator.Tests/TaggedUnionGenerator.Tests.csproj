@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SourceGenerator.Incremental.Gen\SourceGenerator.Incremental.Gen.csproj" />
+    <ProjectReference Include="..\TaggedUnionGenerator\TaggedUnionGenerator.csproj" />
   </ItemGroup>
 
 </Project>
