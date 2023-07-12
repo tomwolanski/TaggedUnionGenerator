@@ -1,20 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
+    <InformationalVersion>0.1.0-ci.8+Branch.main.Sha.6d13678c8f2ac49e6a4189675eda00f7e8228e0c</InformationalVersion>
+    <Version>0.1.0-ci0008</Version>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\TaggedUnionGenerator\TaggedUnionGenerator.csproj"
-                      OutputItemType="Analyzer"
-                      ReferenceOutputAssembly="false" >
+    <ProjectReference Include="..\TaggedUnionGenerator\TaggedUnionGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false">
       <PrivateAssets>all</PrivateAssets>
-     <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </ProjectReference>
   </ItemGroup>
-
 </Project>
