@@ -7,7 +7,7 @@ namespace TaggedUnionGenerator
         public static readonly DiagnosticDescriptor ErrorUnionGenerationGenericError = new DiagnosticDescriptor(
                         "UG0001",
                         "Failed to generate union struct",
-                        "Failed to generate union based on type {0}.{1}. Exception was raised: '{2}'",
+                        "Failed to generate union based on type {0}.{1}. Exception was raised: '{2}'.",
                         Consts.AssemblyName.Name,
                         DiagnosticSeverity.Error,
                         true);
@@ -30,7 +30,7 @@ namespace TaggedUnionGenerator
 
         public static readonly DiagnosticDescriptor ErrorInvalidOptionNameFormat = new DiagnosticDescriptor(
                         "UG0004",
-                        "Union option name does not start with capital letter.",
+                        "Union option name does not start with capital letter",
                         "Failed to generate union based on type {0}.{1}. Option name '{2}' should start with capital letter.",
                         Consts.AssemblyName.Name,
                         DiagnosticSeverity.Error,
@@ -39,7 +39,7 @@ namespace TaggedUnionGenerator
         public static readonly DiagnosticDescriptor ErrorSingleOptionServerNoPurpose = new DiagnosticDescriptor(
                         "UG0005",
                         "Union with single option serves no purpose",
-                        "Union based on type {0}.{1} has a single option and serves no purpose.",
+                        "Union based on type {0}.{1} has a single option and serves no purpose",
                         Consts.AssemblyName.Name,
                         DiagnosticSeverity.Warning,
                         true);
@@ -47,7 +47,7 @@ namespace TaggedUnionGenerator
         public static readonly DiagnosticDescriptor ErrorTypeIsNotAnUnion = new DiagnosticDescriptor(
                         "UG0006",
                         "Type is not an union",
-                        "Type {0}.{1} has no options and is not an union.",
+                        "Type {0}.{1} has no options and is not an union",
                         Consts.AssemblyName.Name,
                         DiagnosticSeverity.Error,
                         true);
@@ -55,12 +55,10 @@ namespace TaggedUnionGenerator
         public static readonly DiagnosticDescriptor ErrorSerializerGenerationGenericError = new DiagnosticDescriptor(
                         "UG0007",
                         "Failed to generate union json serializer",
-                        "Failed to generate union json serializer based on type {0}.{1}. Exception was raised: '{2}'",
+                        "Failed to generate union json serializer based on type {0}.{1}. Exception was raised: '{2}'.",
                         Consts.AssemblyName.Name,
                         DiagnosticSeverity.Error,
                         true);
-
-        
     }
 }
 
