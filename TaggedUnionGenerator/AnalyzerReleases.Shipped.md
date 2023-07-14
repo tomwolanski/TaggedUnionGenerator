@@ -12,3 +12,4 @@ UG0004  |  Usage   |  Error   | "Union option name does not start with capital l
 UG0005  |  Usage   |  Warning | "Union with single option serves no purpose" - A Tagged union with single named option
 UG0006  |  Usage   |  Error   | "Type is not an union" - Failure to generate union json converter due to invalid type provided
 UG0007  |  Usage   |  Error   | "Failed to generate union json serializer" - Generic failure to generate union json converter due to an internal exception being thrown
+UG0008  |  Usage   |  Warning | "Disabled generation of implicit cast operators" - Detected that multiple options use the same CRL type that prevents generation of implicit cast operators

@@ -59,6 +59,14 @@ namespace TaggedUnionGenerator
                         Consts.AssemblyName.Name,
                         DiagnosticSeverity.Error,
                         true);
+
+        public static readonly DiagnosticDescriptor WarningCastOperatorsDisabled = new DiagnosticDescriptor(
+                        "UG0008",
+                        "Disabled generation of implicit cast operators",
+                        "Option types are not unique, disabling generation of implicit cast operators",
+                        Consts.AssemblyName.Name,
+                        DiagnosticSeverity.Warning,
+                        true);
     }
 }
 
