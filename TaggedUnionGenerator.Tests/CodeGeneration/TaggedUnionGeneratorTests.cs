@@ -2,7 +2,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis;
 using System.Reflection;
 
-namespace TaggedUnionGenerator.Tests
+namespace TaggedUnionGenerator.Tests.CodeGeneration
 {
     public class TaggedUnionGeneratorTests
     {

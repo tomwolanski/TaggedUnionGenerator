@@ -24,6 +24,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TaggedUnionGenerator\TaggedUnionGenerator.csproj" />
+    <ProjectReference Include="..\TaggedUnionGenerator\TaggedUnionGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </ProjectReference>
   </ItemGroup>
 </Project>
