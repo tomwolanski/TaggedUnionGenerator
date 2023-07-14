@@ -625,7 +625,7 @@ namespace TaggedUnionGenerator.Tests
             var runResult = GenTestHelpers.RunGenerator<TaggedUnionGenerator>(code);
 
             Assert.Collection(runResult.Diagnostics,
-                n => n.AssertDiagnosticEquals(DiagnosticSeverity.Warning, "UG0005", "Union based on type Ns.IntOrBool has a single option and serves no purpose."));
+                n => n.AssertDiagnosticEquals(DiagnosticSeverity.Warning, "UG0005", "Union based on type Ns.IntOrBool has a single option and serves no purpose"));
         }
     }
 
