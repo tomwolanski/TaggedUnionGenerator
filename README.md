@@ -73,11 +73,25 @@ public static class Program
         var deserialized = JsonSerializer.Deserialize<IntOrBool>(json, ops);
     }
 }
-
-
-
-
 ```
+
+
+## VS linting support
+
+## Detect empty option name.
+All options require name, so the values like empty string or null cannot be provided.
+![image](https://github.com/tomwolanski/TaggedUnionGenerator/assets/68085653/6edf4aae-203f-47cc-bbfa-0253b9ca1a14)
+
+
+### Detect multiple options using the sme name.
+In this scenario the generator is unable to produce methods with the same name, so an error is produced:
+![image](https://github.com/tomwolanski/TaggedUnionGenerator/assets/68085653/cc0e941a-400a-4461-9deb-f239720e70db)
+
+
+### Detect multiple options using the same CRL type.
+In this scenario the generator skips generation of cast operators since wo would not be able to decide whenever the value should be matched to which factory method.
+![image](https://github.com/tomwolanski/TaggedUnionGenerator/assets/68085653/8af77b5e-f549-489f-a25e-65f6c024bcfa)
+
 
 
 
