@@ -93,5 +93,10 @@ In this scenario the generator skips generation of cast operators since wo would
 ![image](https://github.com/tomwolanski/TaggedUnionGenerator/assets/68085653/8af77b5e-f549-489f-a25e-65f6c024bcfa)
 
 
+### Detect invalid usage of JSON converter attrubute.
+A `UnionJsonConverterAttribute<>` requires a type to be a valid union with options, so invalid usage fails the build.
+![image](https://github.com/tomwolanski/TaggedUnionGenerator/assets/68085653/d9298d32-8027-4ca7-bcf9-96405f20a454)
+
+
 
 
