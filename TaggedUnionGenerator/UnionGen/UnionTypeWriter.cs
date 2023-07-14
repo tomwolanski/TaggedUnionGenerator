@@ -37,10 +37,13 @@ namespace TaggedUnionGenerator.Writers
                 writer.WriteLine();
             }
 
-            foreach (var option in def.Options)
+            if (def.GenerateCastOperators)
             {
-                WriteSingleCastOperator(def, option, writer);
-                writer.WriteLine();
+                foreach (var option in def.Options)
+                {
+                    WriteSingleCastOperator(def, option, writer);
+                    writer.WriteLine();
+                }
             }
 
             foreach (var option in def.Options)
