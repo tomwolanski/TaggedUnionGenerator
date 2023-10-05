@@ -35,3 +35,11 @@ jobs:
         
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+
+
+      - name: InstallStryker
+        run: dotnet tool install dotnet-stryker
+      
+      - name: RunStryker
+        run: dotnet stryker --mutation-level Complete --reporter "dashboard"
+      
