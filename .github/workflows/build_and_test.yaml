@@ -38,7 +38,7 @@ jobs:
 
 
       - name: InstallStryker
-        run: dotnet tool install dotnet-stryker
+        run: dotnet tool install --global dotnet-stryker
       
       - name: RunStryker
         run: dotnet stryker --mutation-level Complete --reporter "dashboard"
